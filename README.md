@@ -1,2 +1,21 @@
 # Demand-Forecasting
 Demand-Forecasting
+📊 Demand Forecasting with XGBoost
+This project uses XGBoost and other machine learning techniques to predict sales based on historical data. Key features include data preprocessing, feature engineering, hyperparameter tuning, and performance evaluation.
+📁 Project Structure
+- Final Project/
+  - env/                    # Virtual environment (optional)
+  - train.csv               # Dataset
+  - demand_forecasting.py   # Main code
+  - README.md               # Project documentation
+ Setup Instructions:
+Create a virtual environment:
+python -m venv env
+Activate the environment:
+Windows:
+.\env\Scripts\activate
+Install dependencies:
+pip install pandas numpy scikit-learn matplotlib seaborn xgboost
+Run the Project
+ Results::
+The model uses XGBoost with RandomizedSearchCV for hyperparameter tuning. Evaluation metrics like RMSE, MAE, and R² are calculated, and actual vs predicted sales plots are generated.
