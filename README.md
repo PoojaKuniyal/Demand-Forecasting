@@ -1,21 +1,8 @@
-# Demand-Forecasting
-Demand-Forecasting
-📊 Demand Forecasting with XGBoost
-This project uses XGBoost and other machine learning techniques to predict sales based on historical data. Key features include data preprocessing, feature engineering, hyperparameter tuning, and performance evaluation.
-📁 Project Structure
-- Final Project/
-  - env/                    # Virtual environment (optional)
-  - train.csv               # Dataset
-  - demand_forecasting.py   # Main code
-  - README.md               # Project documentation
- Setup Instructions:
-Create a virtual environment:
-python -m venv env
-Activate the environment:
-Windows:
-.\env\Scripts\activate
-Install dependencies:
-pip install pandas numpy scikit-learn matplotlib seaborn xgboost
-Run the Project
- Results::
-The model uses XGBoost with RandomizedSearchCV for hyperparameter tuning. Evaluation metrics like RMSE, MAE, and R² are calculated, and actual vs predicted sales plots are generated.
+The features used to build the models for demand forecasting were: store, item, month, day, weekday, holidays, m1, m2, weekend, sales_lag_1, sales_lag_2, and sales_lag_3.
+- As demand forecasting is a type of time series forecasting, the data was divided sequentially to ensure the temporal order was maintained.
+- Maintaining the sequence is crucial because time series data often exhibit trends, seasonality, or other time-dependent patterns that could be disrupted by random shuffling.
+- By preserving the temporal order, the model can learn from past data behavior and make accurate predictions about future demand.
+- The data was prepared for training a Long Short-Term Memory (LSTM) model by creating input sequences (X) and corresponding targets (y).
+- This setup was designed to predict daily sales by analyzing patterns from the past 30 days of data.
+- For the RandomForestRegressor model, *RandomizedSearchCV* was used to find the best hyperparameters, optimizing the model’s performance.
+- Using the above feature engineering, the RandomForestRegressor model outperformed the LSTM model for this dataset.
